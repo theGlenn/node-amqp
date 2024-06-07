@@ -1,0 +1,47 @@
+{
+  "name": "node-amqp",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "description": "A simple AMQP client for Node.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "test": "jest --collectCoverage --detectOpenHandles",
+    "test:watch": "jest --watch --detectOpenHandles --coverage --env=node",
+    "clean": "rm -rf ./dist && rm -rf tsconfig.build.tsbuildinfo",
+    "compile": "tsc --build ./tsconfig.build.json",
+    "build": "npm run clean && npm run compile",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theGlenn/node-amqp.git",
+    "directory": "packages/amqp"
+  },
+  "author": "Glenn Sonna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theGlenn/node-amqp/issues"
+  },
+  "homepage": "https://github.com/theGlenn/node-amqp#readme",
+  "dependencies": {
+    "amqplib": "^0.8.0",
+    "exponential-backoff": "^3.1.0",
+    "pino": "^9.1.0",
+    "uuid": "^8.3.2"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.10.5",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.2",
+    "@types/uuid": "^9.0.8",
+    "flush-write-stream": "^2.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.4",
+    "typescript": "^5.4.5"
+  }
+}
