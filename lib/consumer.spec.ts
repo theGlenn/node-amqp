@@ -11,8 +11,6 @@ describe('Test consummer', () => {
   const rabbitURL = 'amqp://localhost:5672';
   const connection: Connection = new Connection(rabbitURL);
 
-
-
   const mockLogger: LoggerInterface = makeMockLogger();
 
   const mockMetrics: Metrics = {
